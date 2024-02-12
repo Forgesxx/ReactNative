@@ -1,12 +1,12 @@
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
 interface ICleanButton{
-    value: string,
-    onPress: () => void
+    value: number,
+    onPress: (value: number) => void
 }
-export const CleanButton: React.FC<ICleanButton> = ({value, onPress}) =>{
+export const NumberButton: React.FC<ICleanButton> = ({value, onPress}) =>{
     return(
-<TouchableOpacity style={styles.button} onPress={()  => onPress()}>
+<TouchableOpacity style={styles.button} onPress={()  => onPress(value)}>
     <Text style={styles.text} >{value}</Text>
 </TouchableOpacity>
     )
@@ -14,7 +14,7 @@ export const CleanButton: React.FC<ICleanButton> = ({value, onPress}) =>{
 
 const styles = StyleSheet.create({
     button:{
-        backgroundColor: 'orange',
+        backgroundColor: 'blue',
         padding: 20,
         display: 'flex',
         justifyContent: 'center',
